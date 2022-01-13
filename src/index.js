@@ -6,9 +6,12 @@ const morgan = require('morgan')
 const app = express()
 const port = 3000
 
+
+
 const exphbs = require('express-handlebars')
 const hbs = exphbs.create({ extname: '.hbs' })
 
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Http logger
 app.use(morgan('combined'))
